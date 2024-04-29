@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getPokemons } from "../api/pokemons";
+import { getPokemons } from "../api/Pokemons";
 import Spinner from "./Spinner";
 import { PokemonsList } from "./PokemonsList";
 import { Pokemon } from "../types/Pokemons";

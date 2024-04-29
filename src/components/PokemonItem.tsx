@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getMainImageUrl, getPokemonId } from "../helpers/pokemon";
+import { getMainImageUrl, getPokemonId } from "../helpers/Pokemon";
 import { Pokemon } from "../types/Pokemons";
 
 interface Props {
@@ -14,7 +14,7 @@ export const PokemonItem = ({ data }: Props) => {
     >
       <Link
         to={`pokemons/${data.name}`}
-        className="flex items-center gap-3 text-black hover:text-black"
+        className="flex items-center gap-3 text-black hover:text-black font-light"
       >
         <img src={getMainImageUrl(data.name)} className="w-10" />
         <div className="flex flex-col">

@@ -1,3 +1,7 @@
+body {
+  --pokemon-type-color: #9a0505;
+}
+
 .pokedex {
   height: 20em;
   padding: 1.5em;
@@ -6,7 +10,7 @@
 }
 
 .pokedex:hover {
-  filter: drop-shadow(0 0 1em #9a0505);
+  filter: drop-shadow(0 0 1em var(--pokemon-type-color));
 }
 
 .layout {

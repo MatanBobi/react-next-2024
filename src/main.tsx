@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import { Main } from "./components/Main.tsx";
 import "./index.css";
-import { getMainImageUrl } from "./helpers/pokemon.ts";
+import { getMainImageUrl } from "./helpers/Pokemon.ts";
+import { getPokemonData } from "./api/Pokemons.ts";
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,9 @@ const router = createBrowserRouter([
         path: "pokemons/:pokemonName",
         element: <Main />,
         loader: async ({ params }) => {
-          const pokemonImageUrl = await Promise.resolve(
-            getMainImageUrl(params.pokemonName!)
-          );
-          return { pokemonImageUrl };
+          const pokemonPageData = await getPokemonData(params.pokemonName!);
+          const pokemonImageUrl = getMainImageUrl(params.pokemonName!);
+          return { pokemonImageUrl, pokemonPageData };
         },
       },
     ],
