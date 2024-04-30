@@ -40,7 +40,46 @@ export const PokemonDetails = ({ data }: Props) => {
           </ul>
         </DataTile>
         <DataTile title="Evolutions">
-          <PokemonEvolutions chain={pokemonChain} currentPokemon={data.name} />
+          <PokemonEvolutions
+            chain={pokemonChain}
+            currentPokemon={data.name}
+            evolvesFrom={data.evolvesFrom}
+          />
+        </DataTile>
+        <DataTile title="Stats">
+          <ul>
+            {data.stats.map((stat) => (
+              <li key={stat.stat.name} className="flex justify-between">
+                <span className="capitalize">{stat.stat.name}</span>
+                <span>{stat.base_stat}</span>
+              </li>
+            ))}
+          </ul>
+        </DataTile>
+        <DataTile title="Base Moves">
+          <ul>
+            {data.moves
+              .filter((move) =>
+                move.version_group_details.every(
+                  (version) => version.level_learned_at !== 0
+                )
+              )
+              .map((move) => (
+                <li key={move.move.name} className="capitalize">
+                  {move.move.name}
+                </li>
+              ))}
+          </ul>
+        </DataTile>
+        <DataTile title="Names">
+          <ul>
+            {data.names.map((name) => (
+              <li key={name.name} className="flex justify-between capitalize">
+                <span>{name.language.name}</span>
+                <span>{name.name}</span>
+              </li>
+            ))}
+          </ul>
         </DataTile>
       </div>
     </>

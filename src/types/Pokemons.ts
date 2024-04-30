@@ -32,7 +32,7 @@ export interface PokemonType {
   type: { name: PokemonTypeNames; url: string };
 }
 
-export interface PokemonData {
+export type PokemonData = {
   id: number;
   name: string;
   height: number;
@@ -50,10 +50,26 @@ export interface PokemonData {
     effort: number;
     stat: { name: string; url: string };
   }[];
-}
+  moves: {
+    move: {
+      name: string;
+    };
+    version_group_details: {
+      level_learned_at: number;
+    }[];
+  }[];
+  names: {
+    language: {
+      name: string;
+      url: string;
+    };
+    name: string;
+  }[];
+};
 
 export interface PokemonPageData extends PokemonData {
-  chain: PokemonChain;
+  chain: { evolves_to: { species: { name: string } }[] };
+  evolvesFrom: string;
 }
 
 export const pokemonTypesColorMapper: Record<PokemonTypeNames, string> = {
