@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "postcss.config.cjs"],
+  "include": ["src", "postcss.config.cjs", "./test-setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
