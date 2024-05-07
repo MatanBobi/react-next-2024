@@ -1,8 +1,7 @@
-import { describe, test, expect, beforeAll } from "vitest";
+import { describe, test, expect } from "vitest";
 import {
   render,
   screen,
-  waitFor,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
