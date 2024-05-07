@@ -11,7 +11,7 @@ export const Main = () => {
   };
   return (
     <main
-      className="flex flex-col items-center bg-gray-100 h-screen"
+      className="flex flex-col items-center bg-gray-100 h-screen overflow-y-auto relative"
       style={{
         ["--pokemon-type-color" as any]:
           pokemonTypesColorMapper[pokemonPageData.types[0].type.name],

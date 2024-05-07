@@ -8,7 +8,7 @@ export const PokemonsList = ({ data }: Props) => {
   return (
     <ul className="overflow-y-auto flex-grow">
       {data.map((pokemon: Pokemon) => (
-        <PokemonItem data={pokemon} />
+        <PokemonItem key={pokemon.name} data={pokemon} />
       ))}
     </ul>
   );
