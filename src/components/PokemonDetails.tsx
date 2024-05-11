@@ -76,7 +76,10 @@ export const PokemonDetails = ({ data }: Props) => {
         <DataTile title="Names">
           <ul>
             {data.names.map((name) => (
-              <li key={name.name} className="flex justify-between capitalize">
+              <li
+                key={`${name.language.name}-${name.name}`}
+                className="flex justify-between capitalize"
+              >
                 <span>{name.language.name}</span>
                 <span>{name.name}</span>
               </li>
