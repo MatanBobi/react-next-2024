@@ -10,8 +10,8 @@ import App from "../App";
 describe("App", () => {
   test("Should show spinner and then show all pokemons", async () => {
     render(<App />, { wrapper: BrowserRouter });
-    const loadingElement = screen.getByAltText("loading");
-    expect(screen.getByAltText("loading")).toBeInTheDocument();
+    const loadingElement = screen.getByAltText("Loading...");
+    expect(screen.getByAltText("Loading...")).toBeInTheDocument();
     await waitForElementToBeRemoved(loadingElement);
     expect(screen.getAllByRole("link")).toHaveLength(151);
   });

@@ -10,11 +10,11 @@ export const PokemonItem = ({ data }: Props) => {
   return (
     <li
       key={data.name}
-      className="px-4 py-5 border-t border-t-slate-300 cursor-pointer hover:bg-slate-200 font-medium"
+      className="px-4 py-5 border-t border-t-slate-300 cursor-pointer hover:bg-slate-200 font-medium dark:border-t-gray-600 dark:text-white dark:hover:bg-gray-700"
     >
       <Link
         to={`pokemons/${data.name}`}
-        className="flex items-center gap-3 text-black hover:text-black font-light"
+        className="flex items-center gap-3 text-black hover:text-black font-light dark:text-white dark:hover:text-white"
       >
         <img src={getMainImageUrl(data.name)} className="w-10" />
         <div className="flex flex-col">

@@ -39,13 +39,15 @@ export const PokemonDetails = ({ data }: Props) => {
             ))}
           </ul>
         </DataTile>
-        <DataTile title="Evolutions">
-          <PokemonEvolutions
-            chain={pokemonChain}
-            currentPokemon={data.name}
-            evolvesFrom={data.evolvesFrom}
-          />
-        </DataTile>
+        {pokemonChain.length > 0 ? (
+          <DataTile title="Evolutions">
+            <PokemonEvolutions
+              chain={pokemonChain}
+              currentPokemon={data.name}
+              evolvesFrom={data.evolvesFrom}
+            />
+          </DataTile>
+        ) : null}
         <DataTile title="Stats">
           <ul>
             {data.stats.map((stat) => (

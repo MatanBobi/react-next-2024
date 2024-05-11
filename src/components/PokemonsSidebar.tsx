@@ -17,11 +17,21 @@ export const PokemonsSidebar = () => {
     return pokemon.name.toLowerCase().includes(searchValue.toLowerCase());
   });
 
-  if (isPending) return <Spinner />;
-  if (error) return <div>Error: {error.message}</div>;
+  if (isPending)
+    return (
+      <div className="max-h-screen flex flex-col border-r border-r-slate-300 dark:border-r-slate-600 dark:bg-gray-800">
+        <Spinner />
+      </div>
+    );
+  if (error)
+    return (
+      <div className="max-h-screen flex flex-col border-r border-r-slate-300 dark:border-r-slate-600 dark:bg-gray-800">
+        Error: {error.message}
+      </div>
+    );
 
   return (
-    <div className="max-h-screen flex flex-col border-r border-r-slate-300">
+    <div className="max-h-screen flex flex-col border-r border-r-slate-300 dark:border-r-slate-600 dark:bg-gray-800">
       <PokemonsSidebarHeader
         pokemonsCount={data.length}
         onSearch={(e: React.ChangeEvent<HTMLInputElement>) => {
