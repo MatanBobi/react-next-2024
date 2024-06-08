@@ -16,5 +16,5 @@ test("Should render App with mocked data", async ({ mount, page }) => {
   );
   expect(component.getByAltText("Loading...")).toBeDefined();
   await expect(component.getByAltText("Loading...")).not.toBeVisible();
-  expect(await component.getByRole("link").all()).toHaveLength(151);
+  expect(await component.getByRole("link").count()).toBe(151);
 });
