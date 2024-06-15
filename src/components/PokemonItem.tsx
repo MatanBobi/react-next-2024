@@ -16,7 +16,11 @@ export const PokemonItem = ({ data }: Props) => {
         to={`pokemons/${data.name}`}
         className="flex items-center gap-3 text-black hover:text-black font-light dark:text-white dark:hover:text-white"
       >
-        <img src={getMainImageUrl(data.name)} className="w-10" />
+        <img
+          src={getMainImageUrl(data.name)}
+          className="w-10"
+          alt={data.name}
+        />
         <div className="flex flex-col">
           <span className="text-slate-400 text-xs">
             #{getPokemonId(data.url)}

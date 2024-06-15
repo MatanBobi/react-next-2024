@@ -3,6 +3,7 @@ import { PokemonItem } from "../PokemonItem";
 import { BrowserRouter } from "react-router-dom";
 
 test("Should render PokemonItem", async ({ mount }) => {
+  // Render the component with router
   const component = await mount(
     <BrowserRouter>
       <PokemonItem
@@ -14,6 +15,11 @@ test("Should render PokemonItem", async ({ mount }) => {
     </BrowserRouter>,
     {}
   );
-  await expect(component.getByRole("link")).toHaveText("#1bulbasaur");
+  // Verify image is visible
+  await expect(component.getByAltText("bulbasaur")).toBeVisible();
+  // Verify the list item is wrapped in an anchor with the text
+  expect(
+    component.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
+  ).toBeVisible();
   await expect(component).toHaveScreenshot();
 });

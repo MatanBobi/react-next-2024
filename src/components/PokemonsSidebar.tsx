@@ -34,8 +34,8 @@ export const PokemonsSidebar = () => {
     <div className="max-h-screen flex flex-col border-r border-r-slate-300 dark:border-r-slate-600 dark:bg-gray-800">
       <PokemonsSidebarHeader
         pokemonsCount={data.length}
-        onSearch={(e: React.ChangeEvent<HTMLInputElement>) => {
-          setSearchValue(e.target.value);
+        onSearch={(name: string) => {
+          setSearchValue(name);
         }}
       />
       {filteredData ? <PokemonsList data={filteredData} /> : "No results"}

@@ -1,6 +1,6 @@
 interface Props {
   pokemonsCount: number;
-  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: (name: string) => void;
 }
 
 export const PokemonsSidebarHeader = ({ pokemonsCount, onSearch }: Props) => {
@@ -11,7 +11,9 @@ export const PokemonsSidebarHeader = ({ pokemonsCount, onSearch }: Props) => {
         className="w-full p-2 bg-gray-200 focus-visible:outline-none dark:bg-gray-700 dark:text-white"
         type="search"
         placeholder="Search Pokémon 🔍"
-        onChange={onSearch}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          onSearch(e.target.value)
+        }
       />
     </div>
   );

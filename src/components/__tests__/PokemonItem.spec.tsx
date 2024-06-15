@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 describe("PokemonItem", () => {
   test("Should render PokemonItem", () => {
+    // Render the component with a router wrapper
     render(
       <PokemonItem
         data={{
@@ -14,9 +15,11 @@ describe("PokemonItem", () => {
       />,
       { wrapper: BrowserRouter }
     );
-    expect(screen.getByText("#1")).toBeInTheDocument();
+    // Verify image is visible
+    expect(screen.getByAltText("bulbasaur")).toBeVisible();
+    // Verify the list item is wrapped in an anchor with the text
     expect(
-      screen.getByRole("link", { name: "#1 bulbasaur" })
-    ).toBeInTheDocument();
+      screen.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
+    ).toBeVisible();
   });
 });

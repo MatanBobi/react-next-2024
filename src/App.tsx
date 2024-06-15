@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 
 function InnerApp() {
   return (
-    <div className="layout">
+    <div className="layout dark:bg-gray-800 h-full">
       <PokemonsSidebar />
       <Outlet />
     </div>
