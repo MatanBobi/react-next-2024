@@ -10,7 +10,7 @@ export const PokemonItem = ({ data }: Props) => {
   return (
     <li
       key={data.name}
-      className="px-4 py-5 border-t border-t-slate-300 cursor-pointer hover:bg-slate-200 font-medium dark:border-t-gray-600 dark:text-white dark:hover:bg-gray-700"
+      className="px-4 py-5 border-t border-t-slate-300 cursor-pointer hover:bg-slate-200 font-medium dark:border-t-gray-600 dark:text-white dark:hover:bg-gray-700 dark:bg-gray-800"
     >
       <Link
         to={`pokemons/${data.name}`}

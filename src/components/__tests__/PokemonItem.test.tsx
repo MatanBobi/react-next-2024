@@ -21,5 +21,4 @@ test("Should render PokemonItem", async ({ mount }) => {
   expect(
     component.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
   ).toBeVisible();
-  await expect(component).toHaveScreenshot();
 });

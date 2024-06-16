@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { PokemonsSidebarHeader } from "../PokemonsSidebarHeader";
 
 describe("PokemonSidebarHeader", () => {
-  test("Should render PokemonItem", async () => {
+  test("Should call onSearch if the search value changes", async () => {
     const user = userEvent.setup();
     const mockSearch = vi.fn();
     // Render the component with a router wrapper

@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import { PokemonsSidebarHeader } from "../PokemonsSidebarHeader";
+import sinon from "sinon";
 
-test("Should render PokemonSidebarHeader", async ({ mount }) => {
+test("Should call onSearch if the search value changes", async ({ mount }) => {
   let isExpectedValue = false;
   const mockSearch = (value: string) => {
     if (value === "bulbasaur") {
