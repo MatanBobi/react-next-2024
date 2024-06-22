@@ -23,7 +23,7 @@ test.describe("PokemonItem adapts to current theme - Light", () => {
     // Verify image is visible
     await expect(component.getByAltText("bulbasaur")).toBeVisible();
     // Verify the list item is wrapped in an anchor with the text
-    expect(
+    await expect(
       component.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
     ).toBeVisible();
     await expect(component).toHaveScreenshot();
@@ -51,7 +51,7 @@ test.describe("PokemonItem adapts to current theme - Dark", () => {
     // Verify image is visible
     await expect(component.getByAltText("bulbasaur")).toBeVisible();
     // Verify the list item is wrapped in an anchor with the text
-    expect(
+    await expect(
       component.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
     ).toBeVisible();
     await expect(component).toHaveScreenshot();
