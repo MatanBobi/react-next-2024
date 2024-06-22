@@ -18,7 +18,7 @@ test("Should render PokemonItem", async ({ mount }) => {
   // Verify image is visible
   await expect(component.getByAltText("bulbasaur")).toBeVisible();
   // Verify the list item is wrapped in an anchor with the text
-  expect(
+  await expect(
     component.getByRole("link", { name: "bulbasaur #1 bulbasaur" })
   ).toBeVisible();
 });
